@@ -4,7 +4,6 @@ import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 import seaborn as sns
 
-# Continue with your initial code to extract data...
 parser = DemoParser("match1.dem")
 
 # Parse bomb plant, defuse, and explode events
@@ -50,18 +49,18 @@ y_coords = player_df["Y"].values
 
 # Set up the plot
 fig, ax = plt.subplots(figsize=(10, 10))
-ax.imshow(map_image_flipped, extent=[0, 3060, 0, 3060])  # Adjust to the actual dimensions of the map
+ax.imshow(map_image_flipped, extent=[0, 3060, 0, 3060])
 
 # Create a heatmap with seaborn
 sns.kdeplot(
     x=x_coords, 
     y=y_coords, 
     ax=ax, 
-    cmap='Reds',  # Choose a color palette
+    cmap='Reds',
     fill=True, 
     thresh=0, 
     levels=100, 
-    alpha=0.6  # Adjust transparency to see the background image
+    alpha=0.6  
 )
 
 # Additional settings
